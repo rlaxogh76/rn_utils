@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# 🛠️ REACT UTILITY REPOSITORY
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> React + Vite 기반의 **API**, **Hook**, **Library** 등을 활용한 유틸리티 기능 구현 프로젝트입니다.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 설치 및 실행 방법
 
-## Expanding the ESLint configuration
+```bash
+# 1. 리포지토리 클론
+git clone https://github.com/rlaxogh76/rn_utils
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 2. 패키지 설치
+npm install
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# 3. 개발 서버 실행
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> 실행 후 터미널에 출력되는 주소(예: `http://localhost:5173`)로 접속하여 정상 작동 여부를 확인하세요.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## ✅ 현재까지 구현된 기능
+
+| 기능 명 | 설명                                   |
+| ------- | -------------------------------------- |
+| `...`   | 추후 작성 필요 (현재 기능 목록 미제공) |
+
+---
+
+## 🗂️ TODO
+
+- [ ] 📍 **Naver Map API** 연동 기능 구현
+
+---
+
+## 📌 프로젝트 목표
+
+공통적으로 자주 쓰이는 기능들을 모듈화하여 **재사용성 높은 React 유틸리티 구성**을 목표로 합니다.
+
+---
+
+## 👨‍💻 개발 환경
+
+- React 18+
+- Vite
+- Node.js
+- JavaScript / TypeScript (선택 사항)
