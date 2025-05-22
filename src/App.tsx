@@ -2,6 +2,7 @@ import "./App.css";
 import { TypeAnimation } from "react-type-animation";
 import styled from "styled-components";
 import Test from "./Test";
+import Main from "./projects/KakaoMap/main";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -153,6 +154,10 @@ const router = createBrowserRouter([
   {
     path: "/test",
     element: <Test />,
+  },
+  {
+    path: "/projects/KakaoMap/main",
+    element: <Main />,
   },
 ]);
 
