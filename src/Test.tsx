@@ -22,7 +22,7 @@ export default function Test() {
   const navigate = useNavigate();
 
   const handleClick = (): void => {
-    navigate("/projects/KaKaoMap/main"); // Main.tsx 라우트로 이동
+    navigate("/projects/KakaoMap/main"); // Main.tsx 라우트로 이동
   };
 
   return (
