@@ -2,7 +2,8 @@ import "./App.css";
 import { TypeAnimation } from "react-type-animation";
 import styled from "styled-components";
 import Test from "./Test";
-import Main from "./projects/KakaoMap/main";
+import KakaoMapMain from "./projects/Map_api/KakaoMap/kakaoMapMain";
+import NaverMapMain from "./projects/Map_api/NaverMap/main";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -157,7 +158,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/projects/KakaoMap/main",
-    element: <Main />,
+    element: <KakaoMapMain />,
+  },
+  {
+    path: "/projects/NaverMap/main",
+    element: <NaverMapMain latitude={37.5665} longitude={126.9780} />
   },
 ]);
 
