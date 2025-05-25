@@ -1,9 +1,10 @@
-import "./App.css";
+import "./App.css"
 import { TypeAnimation } from "react-type-animation";
 import styled from "styled-components";
 import Test from "./Test";
 import KakaoMapMain from "./projects/Map_api/KakaoMap/kakaoMapMain";
-import NaverMapMain from "./projects/Map_api/NaverMap/main";
+import NaverMapMain from "./projects/Map_api/NaverMap/NaverMapMain";
+import Styled from "./projects/DarkMode/Styled-component/Styled";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -163,6 +164,10 @@ const router = createBrowserRouter([
   {
     path: "/projects/NaverMap/main",
     element: <NaverMapMain latitude={37.5665} longitude={126.9780} />
+  },
+  {
+    path: "/projects/DarkMode/Styled-component/Styled",
+    element: < Styled />,
   },
 ]);
 
