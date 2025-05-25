@@ -31,7 +31,7 @@ function NaverMapMain({ latitude, longitude }: Props) {
     console.log('[useEffect 1] window.naver 존재 여부:', typeof window.naver);
     if (typeof window.naver === 'undefined') {
       loadScript(
-        'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=lxxubdao6t',
+        'https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=zm9v2wtukb',
         () => {
           console.log('[useEffect 1] 스크립트 로딩 후 상태 변경');
           setScriptLoaded(true);
