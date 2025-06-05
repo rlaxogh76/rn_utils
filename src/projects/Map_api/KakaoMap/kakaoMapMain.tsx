@@ -25,7 +25,7 @@ const Main = () => {
 
           const container = document.getElementById("map");
           const options = {
-            center: new window.kakao.maps.LatLng(37.5665, 126.9780),
+            center: new window.kakao.maps.LatLng(37.5665, 126.978),
             level: 3,
           };
           new window.kakao.maps.Map(container, options);
@@ -47,7 +47,7 @@ const Main = () => {
       <h2>카카오 지도</h2>
       <div
         id="map"
-        style={{ width: "100%", height: "500px", marginTop: "20px" }}
+        style={{ width: "1000px", height: "1000px", marginTop: "20px" }}
       />
     </div>
   );
