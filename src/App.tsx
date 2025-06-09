@@ -2,7 +2,7 @@ import "./App.css";
 import { TypeAnimation } from "react-type-animation";
 import styled from "styled-components";
 import Test from "./Test";
-import Main from "./projects/KakaoMap/main";
+import Main from "./projects/KakaoMap/Main";
 import {
   createBrowserRouter,
   RouterProvider,
