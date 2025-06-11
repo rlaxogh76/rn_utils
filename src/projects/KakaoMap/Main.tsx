@@ -9,7 +9,6 @@ declare global {
 const Main = () => {
   const mapRef = useRef<any>(null);
   const markerRef = useRef<any>(null);
-  const overlayRef = useRef<any>(null);
 
   useEffect(() => {
     const existingScript = document.getElementById("kakao-map-script");
