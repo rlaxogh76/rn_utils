@@ -6,14 +6,12 @@ declare global {
   }
 }
 
-// kakao map api 불러오기
 const Main = () => {
-  const mapRef = useRef<any>(null); // 맵 객체를 저장할 ref
-  const markerRef = useRef<any>(null); // 마커 객체를 저장할 ref
+  const mapRef = useRef<any>(null);
+  const markerRef = useRef<any>(null);
+  const overlayRef = useRef<any>(null);
 
   useEffect(() => {
-    console.log("useEffect 실행");
-
     const existingScript = document.getElementById("kakao-map-script");
     const appKey = import.meta.env.VITE_KAKAO_MAP_API_KEY;
 
@@ -25,50 +23,49 @@ const Main = () => {
       script.onload = initializeMap;
       script.onerror = () => console.error("Kakao script 로딩 실패");
       document.head.appendChild(script);
-    } else {
-      if (window.kakao?.maps) {
-        initializeMap();
-      }
+    } else if (window.kakao?.maps) {
+      initializeMap();
     }
 
     function initializeMap() {
-      console.log("Kakao maps loaded");
+      if (mapRef.current) return;
 
-      if (mapRef.current) {
-        console.log("Map already initialized");
-        return;
-      }
-
-      const container = document.getElementById("map");
+      const container = document.getElementById("map")!;
       const options = {
         center: new window.kakao.maps.LatLng(37.5665, 126.978),
         level: 3,
       };
-
       const map = new window.kakao.maps.Map(container, options);
       mapRef.current = map;
 
-      // 클릭 이벤트 등록
       window.kakao.maps.event.addListener(
         map,
         "click",
-        function (mouseEvent: { latLng: any }) {
-          const clickPosition = mouseEvent.latLng;
+        (e: { latLng: any }) => {
+          const clickPosition = e.latLng;
 
-          // 기존 마커 제거
           if (markerRef.current) {
             markerRef.current.setMap(null);
           }
 
-          // 새 마커 생성 (클릭한 위치에)
+          const markerImageUrl =
+            "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-512.png";
+
+          const markerImage = new window.kakao.maps.MarkerImage(
+            markerImageUrl,
+            new window.kakao.maps.Size(32, 32),
+            { offset: new window.kakao.maps.Point(16, 32) }
+          );
+
           const marker = new window.kakao.maps.Marker({
             position: clickPosition,
+            image: markerImage,
           });
 
           marker.setMap(map);
           markerRef.current = marker;
 
-          console.log("마커가 클릭 위치에 추가되었습니다:", clickPosition);
+          console.log("커스텀 마커 추가:", clickPosition);
         }
       );
     }
