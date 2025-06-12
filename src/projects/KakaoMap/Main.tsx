@@ -42,25 +42,20 @@ const Main = () => {
         "click",
         (e: { latLng: any }) => {
           const clickPosition = e.latLng;
-
           if (markerRef.current) {
             markerRef.current.setMap(null);
           }
-
           const markerImageUrl =
             "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-512.png";
-
           const markerImage = new window.kakao.maps.MarkerImage(
             markerImageUrl,
             new window.kakao.maps.Size(32, 32),
             { offset: new window.kakao.maps.Point(16, 32) }
           );
-
           const marker = new window.kakao.maps.Marker({
             position: clickPosition,
             image: markerImage,
           });
-
           marker.setMap(map);
           markerRef.current = marker;
 
@@ -70,9 +65,34 @@ const Main = () => {
     }
   }, []);
 
+  // 일반지도(로드맵)으로 전환
+  const showRoadmap = () => {
+    if (mapRef.current) {
+      mapRef.current.setMapTypeId(window.kakao.maps.MapTypeId.ROADMAP);
+    }
+  };
+
+  // 스카이뷰로 전환
+  const showSkyview = () => {
+    if (mapRef.current) {
+      mapRef.current.setMapTypeId(window.kakao.maps.MapTypeId.SKYVIEW);
+    }
+  };
+
   return (
     <div>
       <h2>카카오 지도</h2>
+
+      {/* 전환 버튼 */}
+      <div style={{ marginBottom: "10px" }}>
+        <button onClick={showRoadmap} style={{ marginRight: 8 }}>
+          일반지도
+        </button>
+        <button onClick={showSkyview}>
+          스카이뷰
+        </button>
+      </div>
+
       <div
         id="map"
         style={{
