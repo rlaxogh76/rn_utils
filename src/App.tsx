@@ -2,12 +2,9 @@ import "./App.css";
 import { TypeAnimation } from "react-type-animation";
 import styled from "styled-components";
 import Test from "./Test";
-import Main from "./projects/KakaoMap/Main";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  useNavigate,
-} from "react-router-dom";
+import Main from "./projects/KakaoMap/utility/Main";
+import FuzzyText from "./projects/FuzzyText/FuzzyText";
+import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
@@ -158,6 +155,17 @@ const router = createBrowserRouter([
   {
     path: "/projects/KakaoMap/main",
     element: <Main />,
+  },
+  {
+    path: "/projects/FuzzyText/fuzzytext",
+    element: (
+      <>
+        <FuzzyText baseIntensity={0.2} fontSize={200}>
+          404
+        </FuzzyText>
+        <FuzzyText>Not Found</FuzzyText>
+      </>
+    ),
   },
 ]);
 

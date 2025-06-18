@@ -18,17 +18,35 @@ const Kakao_Map_Btn = styled.button`
   }
 `;
 
+const FuzzyText_Btn = styled.button`
+  background-color: #2fa2ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+  &:hover {
+    background-color: #217bfa;
+  }
+`;
+
 export default function Test() {
   const navigate = useNavigate();
 
-  const handleClick = (): void => {
+  const handleClickKakaoMap = (): void => {
     navigate("/projects/KakaoMap/main"); // Main.tsx 라우트로 이동
+  };
+  const handleClickFuzzyText = (): void => {
+    navigate("/projects/FuzzyText/FuzzyText"); // Main.tsx 라우트로 이동
   };
 
   return (
     <div>
       <h1>Test</h1>
-      <Kakao_Map_Btn onClick={handleClick}>카카오맵 이동</Kakao_Map_Btn>
+      <Kakao_Map_Btn onClick={handleClickKakaoMap}>카카오맵 이동</Kakao_Map_Btn>
+      <FuzzyText_Btn onClick={handleClickFuzzyText}>FuzzyText로 이동</FuzzyText_Btn>
     </div>
   );
 }
