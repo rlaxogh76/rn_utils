@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Test from "./Test";
 import Main from "./projects/KakaoMap/utility/Main";
 import FuzzyText from "./projects/FuzzyText/FuzzyText";
+import Cubes from "./projects/Cubes/Cubes";
 import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
@@ -165,6 +166,24 @@ const router = createBrowserRouter([
         </FuzzyText>
         <FuzzyText>Not Found</FuzzyText>
       </>
+    ),
+  },
+  {
+    path: "/projects/Cubes/Cubes",
+    element: (
+      <div className="cubes-container" style={{ height: "600px", position: "relative" }}>
+        <Cubes
+          gridSize={10}
+          maxAngle={45}
+          radius={4}
+          borderStyle="2px dashed #B19EEF"
+          faceColor="#1a1a2e"
+          rippleColor="#fff"
+          rippleSpeed={3}
+          autoAnimate={true}
+          rippleOnClick={true}
+        />
+      </div>
     ),
   },
 ]);
