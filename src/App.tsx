@@ -5,9 +5,11 @@ import Test from "./Test";
 import Main from "./projects/KakaoMap/utility/Main";
 import FuzzyText from "./projects/FuzzyText/FuzzyText";
 import Cubes from "./projects/Cubes/Cubes";
+import PixelCard from "./projects/PixelCard/PixelCard";
 import { createBrowserRouter, RouterProvider, useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { div } from "framer-motion/client";
 
 // 스크롤 래퍼
 const ScrollSnapWrap = styled.div`
@@ -160,29 +162,39 @@ const router = createBrowserRouter([
   {
     path: "/projects/FuzzyText/fuzzytext",
     element: (
-      <>
+      <div className="container">
         <FuzzyText baseIntensity={0.2} fontSize={200}>
           404
         </FuzzyText>
         <FuzzyText>Not Found</FuzzyText>
-      </>
+      </div>
     ),
   },
   {
     path: "/projects/Cubes/Cubes",
     element: (
-      <div className="cubes-container" style={{ height: "600px", position: "relative" }}>
-        <Cubes
-          gridSize={10}
-          maxAngle={45}
-          radius={4}
-          borderStyle="2px dashed #B19EEF"
-          faceColor="#1a1a2e"
-          rippleColor="#fff"
-          rippleSpeed={3}
-          autoAnimate={true}
-          rippleOnClick={true}
-        />
+      <div className="container">
+        <div className="cubes-container" style={{ height: "600px", position: "relative" }}>
+          <Cubes
+            gridSize={10}
+            maxAngle={45}
+            radius={4}
+            borderStyle="2px dashed #B19EEF"
+            faceColor="#1a1a2e"
+            rippleColor="#fff"
+            rippleSpeed={3}
+            autoAnimate={true}
+            rippleOnClick={true}
+          />
+        </div>
+      </div>
+    ),
+  },
+  {
+    path: "/projects/PixelCard/PixelCard",
+    element: (
+      <div className="container">
+        <PixelCard variant="pink">hello I'm developer</PixelCard>
       </div>
     ),
   },

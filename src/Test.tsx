@@ -31,6 +31,9 @@ export default function Test() {
   const handleClickCubes = (): void => {
     navigate("/projects/Cubes/Cubes");
   };
+  const handleClickPixelCard = (): void => {
+    navigate("/projects/PixelCard/PixelCard");
+  };
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
@@ -38,6 +41,7 @@ export default function Test() {
       <Btn onClick={handleClickKakaoMap}>카카오맵 이동</Btn>
       <Btn onClick={handleClickFuzzyText}>FuzzyText로 이동</Btn>
       <Btn onClick={handleClickCubes}>Cubes로 이동</Btn>
+      <Btn onClick={handleClickPixelCard}>PixelCard로 이동</Btn>
     </div>
   );
 }
