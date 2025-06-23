@@ -64,7 +64,11 @@ const Util_btn = styled.button`
 `;
 
 const handleGithub = (): void => {
-  window.open("https://github.com/rlaxogh76", "_blank", "noopener,noreferrer");
+  window.open(
+    "https://github.com/rlaxogh76/rn_utils",
+    "_blank",
+    "noopener,noreferrer"
+  );
 };
 
 const App = () => {
