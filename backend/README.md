@@ -34,7 +34,7 @@ cd frontend
 npm run dev
 ```
 
-> ⚠️ 클라이언트 코드에서 `useWebSocket("ws://localhost:8081")`와 같이 서버 주소가 일치해야 합니다.
+> ⚠️ 클라이언트 코드에서 `useWebSocket("ws://localhost:8080")`와 같이 서버 주소가 일치해야 합니다.
 
 ---
 
