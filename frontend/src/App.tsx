@@ -1,11 +1,11 @@
 import "./App.css";
 import { TypeAnimation } from "react-type-animation";
 import styled from "styled-components";
-import Test from "./Test";
-import FuzzyText from "./projects/FuzzyText/FuzzyText";
-import Cubes from "./projects/Cubes/Cubes";
-import PixelCard from "./projects/PixelCard/PixelCard";
-import WebSocketPage from "./projects/WebSocket/WebSocket";
+import Gallery from "./Gallery";
+import FuzzyText from "./projects/ReactBits/FuzzyText/FuzzyText";
+import Cubes from "./projects/ReactBits/Cubes/Cubes";
+import PixelCard from "./projects/ReactBits/PixelCard/PixelCard";
+import WebSocketPage from "./projects/WebSocket/WebSocketConnection";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import KakaoMapPage from "./projects/KakaoMap/KakaoMap";
+import KakaoMapPage from "./projects/Map/KakaoMap/KakaoMap";
 
 // 스크롤 래퍼
 const ScrollSnapWrap = styled.div`
@@ -76,7 +76,7 @@ const App = () => {
   const { ref: snapRef, inView } = useInView({ threshold: 0.6 });
 
   const handleClick = (): void => {
-    navigate("/test");
+    navigate("/Gallery");
   };
 
   return (
@@ -160,8 +160,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/test",
-    element: <Test />,
+    path: "/Gallery",
+    element: <Gallery />,
   },
   {
     path: "/projects/KakaoMap/KakaoMap",
