@@ -1,8 +1,8 @@
-import useWebSocket from "react-use-websocket"; // { useWebSocket }사용 시 오류 발생
-import React, { useState } from "react";
+import useWebSocket from "react-use-websocket";
+import { useState } from "react";
 
 const WebSocketPage = () => {
-  const socketUrl = "ws://localhost:8080"; // ⚠️ 개발 시엔 보통 ws://
+  const socketUrl = "ws://localhost:8080";
   const { sendMessage, lastMessage } = useWebSocket(socketUrl);
 
   const [message, setMessage] = useState("");
