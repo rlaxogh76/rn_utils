@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "user",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bcryptjs": "^3.0.2",
-    "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "ws": "^8.18.2"
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0"
   }
 }
