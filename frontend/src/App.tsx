@@ -14,6 +14,7 @@ import {
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import KakaoMapPage from "./projects/Map/KakaoMap/KakaoMap";
+import FetchTestPage from "./projects/Fetch/FetchTest";
 
 // 스크롤 래퍼
 const ScrollSnapWrap = styled.div`
@@ -22,7 +23,7 @@ const ScrollSnapWrap = styled.div`
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-`;
+`;  
 
 // 섹션
 const SnapDiv = styled.div`
@@ -212,6 +213,10 @@ const router = createBrowserRouter([
   {
     path: "/projects/WebSocket/WebSocket",
     element: <WebSocketPage />,
+  },
+  {
+    path: "/projects/Fetch/FetchTest",
+    element: <FetchTestPage />,
   },
 ]);
 

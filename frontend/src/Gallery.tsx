@@ -37,6 +37,9 @@ export default function Gallery() {
   const handleClickWebSocket = (): void => {
     navigate("/projects/WebSocket/WebSocket");
   };
+  const handleClickFetchTest = (): void => {
+    navigate("/projects/Fetch/FetchTest");
+  };
 
   return (
     <div style={{ textAlign: "center", padding: "20px" }}>
@@ -46,6 +49,7 @@ export default function Gallery() {
       <Btn onClick={handleClickCubes}>Cubes로 이동</Btn>
       <Btn onClick={handleClickPixelCard}>PixelCard로 이동</Btn>
       <Btn onClick={handleClickWebSocket}>WebSocket로 이동</Btn>
+      <Btn onClick={handleClickFetchTest}>FetchTest로 이동</Btn>
     </div>
   );
 }

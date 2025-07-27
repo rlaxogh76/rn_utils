@@ -2,8 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const port = 3001;
+const cors = require("cors");
 
 app.use(bodyParser.json()); // JSON 파싱
+app.use(cors()); // CORS 허용
 
 // 메모리 내 사용자 목록 저장
 let users = [];
