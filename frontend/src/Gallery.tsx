@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import "./Test.css";
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import './Test.css';
 
 // Main은 여기서 import 하지 않아도 됩니다!
 // import Main from "./projects/KakaoMap/Main";
@@ -23,33 +23,41 @@ export default function Gallery() {
   const navigate = useNavigate();
 
   const handleClickKakaoMap = (): void => {
-    navigate("/projects/KakaoMap/KakaoMap"); // Main.tsx 라우트로 이동
+    navigate('/projects/KakaoMap/KakaoMap'); // Main.tsx 라우트로 이동
   };
   const handleClickFuzzyText = (): void => {
-    navigate("/projects/FuzzyText/FuzzyText");
+    navigate('/projects/FuzzyText/FuzzyText');
   };
   const handleClickCubes = (): void => {
-    navigate("/projects/Cubes/Cubes");
+    navigate('/projects/Cubes/Cubes');
   };
   const handleClickPixelCard = (): void => {
-    navigate("/projects/PixelCard/PixelCard");
+    navigate('/projects/PixelCard/PixelCard');
+  };
+  const handleClickShinyText = (): void => {
+    navigate('/projects/ShinyText/ShinyText');
   };
   const handleClickWebSocket = (): void => {
-    navigate("/projects/WebSocket/WebSocket");
+    navigate('/projects/WebSocket/WebSocket');
   };
   const handleClickFetchTest = (): void => {
-    navigate("/projects/Fetch/FetchTest");
+    navigate('/projects/Fetch/FetchTest');
+  };
+  const handleClickAirbnbClone = (): void => {
+    navigate('/projects/AirbnbClone/airbnb');
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
+    <div style={{ textAlign: 'center', padding: '20px' }}>
       <h1>Test</h1>
       <Btn onClick={handleClickKakaoMap}>카카오맵 이동</Btn>
       <Btn onClick={handleClickFuzzyText}>FuzzyText로 이동</Btn>
       <Btn onClick={handleClickCubes}>Cubes로 이동</Btn>
       <Btn onClick={handleClickPixelCard}>PixelCard로 이동</Btn>
+      <Btn onClick={handleClickShinyText}>ShinyText로 이동</Btn>
       <Btn onClick={handleClickWebSocket}>WebSocket로 이동</Btn>
       <Btn onClick={handleClickFetchTest}>FetchTest로 이동</Btn>
+      <Btn onClick={handleClickAirbnbClone}>Airbnb클론코딩으로 이동</Btn>
     </div>
   );
 }
